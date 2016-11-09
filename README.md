@@ -13,6 +13,8 @@ Clone the repo, cd in the directory and then run :
 When the provisionning is finished, you should be able to reach your app on [http://localhost:5580/](http://localhost:5580/)
 (Which is also the "Api Entry point" asked by the client)
 
+The Hubble repo is automatically cloned within the provisioning script
+
 If you need a different port, you can change it in the vagrant file
 
 ## Contributing
