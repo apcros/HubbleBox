@@ -6,9 +6,6 @@ git clone https://github.com/apcros/Hubble.git
 
 export PGPASSWORD=password
 
-#The below REALLY should be a DatabaseSeeding script...
-psql -U hubble_user -d hubbledb < /srv/hubble-app/Hubble/hubble_schema.sql
-
 rm -r /var/www/html/
 chown -R vagrant:vagrant /srv/hubble-app/Hubble/
 
@@ -18,6 +15,7 @@ cd /srv/hubble-app/Hubble/hubble/
 
 composer install
 php artisan key:generate
+php artisan migrate
 
 ln -s /srv/hubble-app/Hubble/hubble/public/ /var/www/html
 chown -R vagrant:vagrant /var/www/
