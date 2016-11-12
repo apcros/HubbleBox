@@ -10,7 +10,7 @@ export PGPASSWORD=password
 psql -U hubble_user -d hubbledb < /srv/hubble-app/Hubble/hubble_schema.sql
 
 rm -r /var/www/html/
-chown -R www-data:www-data /srv/hubble-app/Hubble/
+chown -R vagrant:vagrant /srv/hubble-app/Hubble/
 
 cp /vagrant/config/hubble_env /srv/hubble-app/Hubble/hubble/.env
 
@@ -20,4 +20,4 @@ composer install
 php artisan key:generate
 
 ln -s /srv/hubble-app/Hubble/hubble/public/ /var/www/html
-chown -R www-data:www-data /var/www/
+chown -R vagrant:vagrant /var/www/
